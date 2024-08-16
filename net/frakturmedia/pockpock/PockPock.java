@@ -14,8 +14,8 @@ public class PockPock extends JFrame implements Runnable, KeyListener, MouseList
 
     private static final long serialVersionUID = 19991231235959L;
 
-    static int ScreenWidth = 840;
-    static int ScreenHeight = 525;
+    static int ScreenWidth = 1280;
+    static int ScreenHeight = 720;
 
     Thread gameloop;
     Random rand = new Random();
@@ -144,7 +144,7 @@ public class PockPock extends JFrame implements Runnable, KeyListener, MouseList
         g2d.drawImage(title_image, 0, 0, ScreenWidth -1 , ScreenHeight - 1, this); 
         g2d.setColor(Color.BLACK);
         g2d.setFont(new Font("Verdana", Font.BOLD, 25));
-        g2d.drawString("Click to begin game", 250, 300);
+        g2d.drawString("Click to begin game", ScreenWidth/2 - 200, ScreenHeight/2);
         repaint();
     }
 
@@ -152,13 +152,13 @@ public class PockPock extends JFrame implements Runnable, KeyListener, MouseList
         g2d.drawImage(game_instructions, 0, 0, ScreenWidth - 1, ScreenHeight - 1, this);
         g2d.setColor(Color.BLACK);
         g2d.setFont(new Font("Verdana", Font.BOLD, 20));
-        g2d.drawString("Game by Cyrille Medard de Chardon", 190, 420);
-        g2d.drawString("Sound effects by:", 190, 440);
-        g2d.drawString("Gaelle & Noellie Medard de Chardon", 190, 460);
+        g2d.drawString("Click to start", 40, 280);
+        g2d.drawString("the game", 40, 310);
+        g2d.drawString("Credits", ScreenWidth/2 - 200, ScreenHeight - 130);
+        g2d.drawString("Coded by Cyrille Medard de Chardon", ScreenWidth/2 - 200, ScreenHeight - 100);
+        g2d.drawString("Sound effects by:", ScreenWidth/2 - 200, ScreenHeight - 70);
+        g2d.drawString("Gaelle & Noellie Medard de Chardon", ScreenWidth/2 - 200, ScreenHeight - 40);
         g2d.setFont(new Font("Verdana", Font.BOLD, 28));
-        g2d.drawString("Credits", 190, 380);
-        g2d.drawString("Click to start", 40, 180);
-        g2d.drawString("the game", 40, 210);
         repaint();
     }
 
@@ -434,14 +434,13 @@ public class PockPock extends JFrame implements Runnable, KeyListener, MouseList
         g2d.drawImage(game_background, 0, 0, ScreenWidth -1 , ScreenHeight - 1, this); 
         g2d.setColor(Color.WHITE);
         g2d.setFont(new Font("Verdana", Font.BOLD, 15));
-        g2d.drawString("Time: " + (game_time / FPS ), 10, 40);
+        g2d.drawString("Time: " + (game_time / FPS ), 10, 20);
 
         //show highscore
         if ( high_score > 0 ) {
             String high_score_string = String.format("%.1f", high_score);
-            g2d.drawString("Best score: " + high_score_string, ScreenWidth - 150, 40);
+            g2d.drawString("Best score: " + high_score_string, ScreenWidth - 150, 20);
         }
-
 
         //draw grass
         for (int i = 0; i < GRASS_COUNT; i += 1) {
