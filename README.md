@@ -3,6 +3,7 @@
 A game I made in 2014 for my daughters (and to play around with some Java).
 
 To run the game just use the following command in terminal:
+
     java -jar PockPock.jar
 
 ## How to compile, create JAR, and run the game
@@ -19,3 +20,9 @@ Run PockPock.jar:
 
     java -jar PockPock.jar
 
+
+## Requirements
+
+You require a java compiler -> `javac`:
+
+    sudo apt install openjdk-21-jdk
